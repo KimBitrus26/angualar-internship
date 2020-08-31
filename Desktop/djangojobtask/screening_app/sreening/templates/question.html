@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="details">
+    <p class="note">Please ensure you you read the story and then answer the questions below:</p>
+</div> <br>
+<div>
+<p class="note">
+    <h2>STORY</h2>
+{% for story in storys %}
+{{ story.story_body}}
+{% endfor %}
+</p>
+</div>
+
+<hr>
+ <h3><p>Answer the questions by choosing the right option below </p></h3>
+
+<div id="answers" class='answers'>
+<form action='.' method="POST" enctype="multi-part/formdata">
+{% csrf_token %}
+{% for result in questions %}
+<!-- <table>
+        <tr>
+            <td>{{ result.id }} ) {{result.question_body}}?</td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="option1" name="{{ result.id }}" value="{{result.option1}}" >{{result.option1}}</td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="option2" name="{{ result.id }}"  value="{{result.option2}}" >{{result.option2}}</td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="option3" name="{{ result.id }}" value="{{result.option3}}" >{{result.option3}}</td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="option4" name="{{ result.id }}" value="{{result.option4}}" >{{result.option4}}</td>
+        </tr>
+        <hr>
+        
+    </table> -->
+<table>
+    <tr>
+        <td>{{ result.id }} ) {{result.question_body}}?</td>
+    </tr>
+    <tr>
+        <td><input type="radio" id="option1" name="test" value="{{result.option1}}" >{{result.option1}}</td>
+    </tr>
+    <tr>
+        <td><input type="radio" id="option2" name="test"  value="{{result.option2}}" >{{result.option2}}</td>
+    </tr>
+    <tr>
+        <td><input type="radio" id="option3" name="test" value="{{result.option3}}" >{{result.option3}}</td>
+    </tr>
+    <tr>
+        <td><input type="radio" id="option4" name="test" value="{{result.option4}}" >{{result.option4}}</td>
+    </tr>
+    <hr>
+    
+</table>
+
+        </li></p>
+    {% endfor %} </ol> 
+<div class="details">
+    <p class="note">Please make sure you have <span class="emphasis">reviewed</span> all your <span class="emphasis">answers</span> before <span class="emphasis">submitting</span>.</p>
+    
+</div>
+<input type=submit value='Submit Answers'> 
+</form>
+</div>
+{% endblock %}

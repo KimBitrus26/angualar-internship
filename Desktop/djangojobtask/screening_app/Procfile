@@ -1,0 +1,1 @@
+web: gunicorn screening_app.wsgi --log-file-
