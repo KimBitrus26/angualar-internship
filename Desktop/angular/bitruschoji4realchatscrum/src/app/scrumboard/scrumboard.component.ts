@@ -13,6 +13,8 @@ export class ScrumboardComponent implements OnInit {
 
   project_id = 0
 
+  participants = []
+
   ngOnInit(): void {
     this.project_id = parseInt((this._route.snapshot.paramMap.get('project_id')));
     this.getProjectGoals();
@@ -21,6 +23,7 @@ export class ScrumboardComponent implements OnInit {
     this._scrumdataService.allProjectGoals(this.project_id).subscribe(
       data => {
         console.log('Success',data)
+        this.participants = data['data']
       },
       error => {
         console.log('Error', error)

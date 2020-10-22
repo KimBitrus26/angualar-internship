@@ -13,7 +13,7 @@ export class ScrumdataService {
 
   _loginurl = 'https://liveapi.chatscrum.com/scrum/api-token-auth/';
 
-  _scrumProjectUrl = 'https://liveapi.chatscrum.com/scrum/api/scrumprojects/project_id/';
+  _scrumProjectUrl = 'https://liveapi.chatscrum.com/scrum/api/scrumprojects/';
 
     public httpOptions = {
       headers: new HttpHeaders({'Content-Type':'application/json'})
