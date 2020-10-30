@@ -8,6 +8,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'scrumboard/:project_id', component: ScrumboardComponent, canActivate: [ AuthGuard ]},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignUpComponent},
+  {path: 'chat', component: ChatComponent},
   {path: 'createproject', component: CreateprojectComponent},
   {path: 'changerole/:project_id', component: ChangeroleComponent, canActivate: [ AuthGuard, ChangeroleGuard ]},
   {path: '**', redirectTo: '/home'},
