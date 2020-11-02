@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'signup', component: SignUpComponent},
   {path: 'chat', component: ChatComponent},
   {path: 'createproject', component: CreateprojectComponent},
-  {path: 'changerole/:project_id', component: ChangeroleComponent, canActivate: [ AuthGuard, ChangeroleGuard ]},
+  {path: 'changerole/:project_id', component: ChangeroleComponent, canActivate: [ AuthGuard ]},
   {path: '**', redirectTo: '/home'},
 ];
 

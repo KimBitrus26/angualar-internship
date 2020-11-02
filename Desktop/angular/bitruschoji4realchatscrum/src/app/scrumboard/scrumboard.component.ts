@@ -13,10 +13,10 @@ export class ScrumboardComponent implements OnInit {
 
   projectId;
   participants = [];
-  taskForTheDay = ["Python", "java", "Javascript"];
-  taskForTheWeek = ["C", "C#", "C++"];
-  taskVerified = ["Jos", "Abuja"];
-  taskDone = ["Nigeria"];
+  taskForTheDay = [];
+  taskForTheWeek = [];
+  taskVerified = [];
+  taskDone = [];
   messages=[];
   myMessages = [];
   tasks = [{'hello': 'hi'},{'hello': 'hi'},{'hello': 'hi'}];
@@ -125,7 +125,7 @@ export class ScrumboardComponent implements OnInit {
     }
   }
 
-  drop(event: CdkDragDrop<string[]>) {
+  dropeddnotuse(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
 
@@ -135,7 +135,7 @@ export class ScrumboardComponent implements OnInit {
 
   }
 
-  dropped(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
